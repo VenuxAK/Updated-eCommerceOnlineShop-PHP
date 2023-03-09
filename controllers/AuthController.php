@@ -10,4 +10,12 @@ class AuthController
     {
         view("register");
     }
+    public static function logout()
+    {
+
+    }
+    public static function adminLogin()
+    {
+        view("admin/login");
+    }
 }

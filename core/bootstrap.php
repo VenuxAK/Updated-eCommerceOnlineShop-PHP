@@ -3,6 +3,7 @@
 require "core/Helpers.php";
 require "core/ServiceContainer.php";
 
-define("BASE_URL", "http://localhost:8000");
-
+$server_name = $_SERVER["SERVER_NAME"];
+$server_port = $_SERVER["SERVER_PORT"];
+define("BASE_URL", "http://$server_name:$server_port");
 
