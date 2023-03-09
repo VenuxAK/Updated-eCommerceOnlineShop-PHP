@@ -33,15 +33,21 @@
 								<span class="ti-user"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li class="nav-item">
-									<a class="nav-link" href="/login">Login</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="/register">Register</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="/logout">Logout</a>
-								</li>
+								<?php if(!isLoggedIn()) : ?>
+									<li class="nav-item">
+										<a class="nav-link" href="/login">Login</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/register">Register</a>
+									</li>
+								<?php else : ?>
+									<li class="nav-item">
+										<a class="nav-link" href="/profile">Profile</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/logout">Logout</a>
+									</li>
+								<?php endif ?>
 							</ul>
 						</li>
 					</ul>
