@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require "core/Helpers.php";
 require "core/ServiceContainer.php";
 

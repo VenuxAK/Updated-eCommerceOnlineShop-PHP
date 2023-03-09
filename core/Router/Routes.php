@@ -22,9 +22,10 @@ Route::post("register", [AuthController::class, "register"]);
 // Admin Panel Authentication
 Route::get("admin/login", [AuthController::class, "adminLogin"]);
 Route::post("admin/login", [AuthController::class, "adminLogin"]);
-
+Route::get("admin/logout", [AuthController::class, "adminLogout"]);
 
 // Admin Panel
+Route::get("admin", [AdminPagesController::class, "adminView"]);
 Route::get("admin/dashboard", [AdminPagesController::class, "dashboardView"]);
 Route::get("admin/profile", [AdminPagesController::class, "adminProfile"]);
 Route::get("admin/users-admin", [AdminPagesController::class, "usersAdminView"]);
