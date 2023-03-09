@@ -14,6 +14,7 @@
                             <?php if(isset($errorMsg)) echo $errorMsg ?>
                         </p>
                         <form action="/admin/login" method="POST" class="forms-sample">
+                            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                             <div class="form-group">
                                 <label for="#adminLoginEmail">Email address</label>
                                 <input type="email" name="email"

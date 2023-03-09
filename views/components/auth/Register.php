@@ -16,6 +16,7 @@
                 <div class="login_form_inner">
                     <h3>Register to enter</h3>
                     <form class="row login_form" action="register" method="post" id="contactForm" novalidate="novalidate">
+                        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                         <p class="card-description text-danger font-weight-bolder">
                             <?php if(isset($errorMsg)) echo $errorMsg ?>
                         </p>
