@@ -22,12 +22,12 @@
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" id="profileDropdown" href="/admin/profile" data-toggle="dropdown" aria-expanded="false">
                     <div class="nav-profile-img">
-                        <img src="<?= BASE_URL ?>/views/admin/assets/images/faces/face1.jpg" alt="image">
+                        <img src="<?= BASE_URL ?>/views/admin/assets/images/profile.jpg" alt="image">
                         <span class="availability-status online"></span>             
                     </div>
                     <div class="nav-profile-text">
                         <p class="mb-1 text-black">
-                            <?= $_SESSION["username"] ?>
+                            <?= $_SESSION["admin_username"] ?>
                         </p>
                     </div>
                 </a>

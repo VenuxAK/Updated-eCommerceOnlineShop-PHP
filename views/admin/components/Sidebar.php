@@ -5,15 +5,15 @@
             <li class="nav-item nav-profile">
                 <a href="/admin/profile" class="nav-link">
                     <div class="nav-profile-image">
-                        <img src="<?= BASE_URL ?>/views/admin/assets/images/faces/face1.jpg" alt="profile">
+                        <img src="<?= BASE_URL ?>/views/admin/assets/images/profile.jpg" alt="profile">
                         <span class="login-status online"></span> <!--change to offline or busy as needed-->              
                     </div>
                     <div class="nav-profile-text d-flex flex-column">
                         <span class="font-weight-bold mb-2">
-                            <?= $_SESSION["username"] ?>
+                            <?= $_SESSION["admin_username"] ?>
                         </span>
                         <span class="text-secondary text-small">
-                            <?= $_SESSION["email"] ?>
+                            <?= $_SESSION["admin_email"] ?>
                         </span>
                     </div>
                     <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
@@ -69,7 +69,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">
                     <span class="menu-title">Clients Side</span>
-                    <i class="mdi mdi-home menu-icon"></i>
+                    <i class="mdi mdi-login menu-icon"></i>
                 </a>
             </li>
             <!-- <li class="nav-item">

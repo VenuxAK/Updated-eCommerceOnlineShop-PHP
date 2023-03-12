@@ -134,12 +134,18 @@ class AuthController
         ]);
     }
     public static function logout()
-    {
-        session_start();
-        unset($_SESSION["username"]);
-        unset($_SESSION["email"]);
-        unset($_SESSION["is_logged_in"]);
-        redirect("/");
+    {   
+        if(isset($_SESSION["is_logged_in"]))
+        {
+            session_start();
+            unset($_SESSION["username"]);
+            unset($_SESSION["email"]);
+            unset($_SESSION["is_logged_in"]);
+            redirect("/");
+        }else{
+            echo "<h1> <center> 404 Page Not Found! </center> </h1>";
+            die();
+        }
     }
 
     // Admin Panel Authentication
@@ -179,8 +185,8 @@ class AuthController
                     {
                         if(password_verify($password,$user->password))
                         {
-                            $_SESSION["username"] = $user->name;
-                            $_SESSION["email"] = $user->email;
+                            $_SESSION["admin_username"] = $user->name;
+                            $_SESSION["admin_email"] = $user->email;
                             $_SESSION["is_admin_logged_in"] = time();
                             redirect("/admin/dashboard");
                         } else {
