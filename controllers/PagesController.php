@@ -6,6 +6,17 @@ class PagesController
     {
         view("home");
     }
+
+    public static function productDetail()
+    {
+        view("product-detail");
+    }
+
+    public static function addToCart()
+    {
+        view("");
+    }
+
     public static function about()
     {
         view("about");

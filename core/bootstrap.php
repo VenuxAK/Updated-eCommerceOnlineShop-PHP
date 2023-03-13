@@ -3,6 +3,6 @@
 require "core/Helpers.php";
 require "core/ServiceContainer.php";
 
-
+define("BASE_URL", "http://localhost:8000");
 
 
