@@ -4,11 +4,27 @@ class PagesController
 {
     public static function home()
     {
-        view("home");
+        $categories = App::get("db")->selectAll("categories")->get();
+        $products = App::get("db")->query("SELECT * FROM products ORDER BY id DESC")->get();
+        
+        view("home", [
+            "products" => $products,
+            "categories" => $categories
+        ]);
     }
     public static function productDetail()
     {
-        view("product-detail");
+        $id = $_GET["id"];
+        $products = App::get("db")->selectAll("products")->get();
+        $products_count = count($products) + 1;
+        if(isset($id) && $id !== "" && is_numeric($id) && $id <= $products_count) {
+            $product = App::get("db")->query("SELECT * FROM products WHERE id=$id")->getOne();
+            view("product-detail", [
+                "product" => $product
+            ]);
+        } else {
+            redirect("/");
+        }
     }
     public static function addToCart()
     {
