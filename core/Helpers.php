@@ -22,4 +22,33 @@ function redirect($view)
     return header("Location: $view");
 }
 
+function request($name)
+{
+    if(Request::METHOD() === "GET")
+    {
+        return $_GET[$name];
+    }
+    if(Request::METHOD() === "POST")
+    {
+        return $_POST[$name];
+    }
+}
 
+function validateEmail($email)
+{
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isLoggedIn()
+{
+    if(isset($_SESSION["is_logged_in"]))
+    {
+        return true;
+    } else {
+        return false;
+    }
+}
